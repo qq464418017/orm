@@ -1,4 +1,4 @@
-module orm
+module github.com/qq464418017/orm
 
 go 1.19
 
