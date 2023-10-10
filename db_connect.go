@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-var orm *gorm.DB
+var Orm *gorm.DB
 
 func ConnectDatabase(dbUserName, dbPasword, dbHost, dbPort, dbName string) {
 	dsn := dbUserName + ":" + dbPasword + "@tcp(" + dbHost + ":" + dbPort + ")/" + dbName + "?charset=utf8&parseTime=True&loc=Local"
@@ -44,6 +44,6 @@ func ConnectDatabase(dbUserName, dbPasword, dbHost, dbPort, dbName string) {
 
 	// SetConnMaxLifetiment 设置连接的最大可复用时间。
 	sqldb.SetConnMaxLifetime(time.Second)
-	orm = db
+	Orm = db
 	fmt.Println(dbName, "connect success")
 }
