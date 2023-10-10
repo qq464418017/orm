@@ -42,8 +42,8 @@ func SelectAllWhere(data interface{}, key string, value interface{}) (int64, err
 	return result.RowsAffected, result.Error
 }
 
-func SelectAllLikeWhere(data interface{}, key string, value interface{}) (int64, error) {
-	result := Orm.Where(key+" LIKE ?", value).Find(data)
+func SelectAllLikeWhere(data interface{}, key string, value string) (int64, error) {
+	result := Orm.Where(key+" LIKE ?", "%"+value+"%").Find(data)
 	return result.RowsAffected, result.Error
 }
 
